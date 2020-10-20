@@ -1,4 +1,14 @@
+body {
+  background-color: rgb(116, 110, 110);
+}
+
+p {
+  font-size: 24pt;
+  text-align: center;
+}
+
 form {
+  background-color: rgb(116, 110, 110);
   margin: 10vmin auto;
   width: 768px;
 }
@@ -10,18 +20,21 @@ label {
 }
 
 button {
-  background-color: aquamarine;
+  background-color: rgb(0, 0, 0);
   border: none;
   border-radius: 4px;
+  color: rgb(248, 246, 246);
   cursor: pointer;
   margin-top: 1rem;
   padding: 0.5rem;
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 
 button:focus,
 button:hover {
-  background-color: aqua;
+  background-color: rgba(218, 241, 4, 0.918);
+  color: rgb(0, 0, 0);
+  transition-delay: 0.2s;
 }
 .flex {
   display: flex;
