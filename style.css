@@ -8,18 +8,26 @@ h1 {
 }
 
 table {
+  background-color: rgb(190, 190, 190);
   border-collapse: collapse;
   margin: 1rem 15.5rem;
   width: 70em;
 }
 
+thead {
+  font-weight: 620;
+}
+
 tr {
+  border-bottom: solid;
   margin: 8px;
 }
 
 td {
+  font-size: 20pt;
   margin: 0;
   padding: 0.5rem 0.25rem;
+  width: 2%;
 }
 
 form {
