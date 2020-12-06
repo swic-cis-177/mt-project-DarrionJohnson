@@ -1,5 +1,16 @@
-import { addWalk } from "./lib.js";
+import { addWalk, createWalksTable } from "./lib.js";
 
-// TODO{darrion}: Import the necessary fxns. such as 'addWalk' and 'renderTable'
-addWalk;
-// TODO{darrion}: Grab the form and attach a 'submit' 'event' handler
+const walksTable = [];
+
+const render = (walksData) => {
+  createWalksTable(walksTable);
+};
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  walksTable.push(addWalk(event.target.elements));
+  render(walksTable);
+});
