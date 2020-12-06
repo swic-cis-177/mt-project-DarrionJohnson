@@ -7,6 +7,21 @@ h1 {
   text-align: center;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 1rem 15.5rem;
+  width: 85%;
+}
+
+tr {
+  margin: 8px;
+}
+
+td {
+  margin: 0;
+  padding: 0.5rem 0.25rem;
+}
+
 form {
   background-color: rgb(116, 110, 110);
   margin: 10vmin auto;
