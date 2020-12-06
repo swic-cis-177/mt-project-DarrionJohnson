@@ -1,6 +1,28 @@
-// TODO{darrion}: 'export' function to 'addWalk'
+const tbody = document.querySelector("tbody");
+const template = document.querySelector("template");
 
-// Elements are the inputs and values from the form
-export const addWalk = (elements) => {
-  // TODO{darrion}: Take the elements and create a new walk
+export const addWalk = (elements) =>
+  Array.from(elements)
+    .filter(({ id }) => id)
+    .reduce(
+      (formInfo, { id, value }) => ({
+        ...formInfo,
+        [id]: value,
+      }),
+      {}
+    );
+
+export const createWalksTable = (walksData) => {
+  tbody.innerHTML = null;
+
+  walksData.forEach(({ date, stepCounter, startTime, endTime }) => {
+    const newWalksRow = template.content.cloneNode(true);
+    const newWalksTDs = newWalksRow.querySelectorAll("td");
+
+    newWalksTDs[0].textContent = date;
+    newWalksTDs[1].textContent = stepCounter;
+    newWalksTDs[2].textContent = startTime;
+    newWalksTDs[3].textContent = endTime;
+    tbody.appendChild(newWalksRow);
+  });
 };
