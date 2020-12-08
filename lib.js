@@ -2,7 +2,23 @@ const tbody = document.querySelector("tbody");
 const template = document.querySelector("template");
 
 const setAMorPM = (time) => {
-  return time.slice(0, 2) > 12 ? "PM" : "AM";
+  const hrs = time.slice(0, 2);
+  const min = time.slice(3);
+
+  const am = (hrs) => {
+    return hrs > 10
+      ? hrs + ":" + min + " AM"
+      : hrs > 0
+      ? hrs.slice(1) + ":" + min + " AM"
+      : "12" + ":" + min + " AM";
+  };
+
+  const pm = (hrs) => {
+    hrs -= 12;
+    return hrs + ":" + min + " PM";
+  };
+
+  return hrs > 12 ? pm(hrs, min) : am(hrs, min);
 };
 
 export const addWalk = (elements) =>
