@@ -1,6 +1,10 @@
 const tbody = document.querySelector("tbody");
 const template = document.querySelector("template");
 
+function setAMorPM(time) {
+  return time.slice(0, 2) > 12 ? "PM" : "AM";
+}
+
 export const addWalk = (elements) =>
   Array.from(elements)
     .filter(({ id }) => id)
@@ -21,8 +25,8 @@ export const createWalksTable = (walksData) => {
 
     newWalksTDs[0].textContent = date;
     newWalksTDs[1].textContent = stepCounter;
-    newWalksTDs[2].textContent = startTime;
-    newWalksTDs[3].textContent = endTime;
+    newWalksTDs[2].textContent = setAMorPM(startTime);
+    newWalksTDs[3].textContent = setAMorPM(endTime);
     tbody.appendChild(newWalksRow);
   });
 };
