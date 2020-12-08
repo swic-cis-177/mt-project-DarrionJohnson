@@ -1,9 +1,9 @@
 const tbody = document.querySelector("tbody");
 const template = document.querySelector("template");
 
-function setAMorPM(time) {
+const setAMorPM = (time) => {
   return time.slice(0, 2) > 12 ? "PM" : "AM";
-}
+};
 
 export const addWalk = (elements) =>
   Array.from(elements)
